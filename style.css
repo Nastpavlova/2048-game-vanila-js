@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.container-score {
+  width: 335px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.container-game {
+  width: 335px;
+  height: 335px;
+  border: 1px solid #ccc;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px
+}
+
+.grid-cell {
+  width: 80px;
+  height: 80px;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: 22px;
+}
