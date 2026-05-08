@@ -7,6 +7,7 @@ body {
   height: 100vh;
   background-color: #fafafa;
   font-size: 14px;
+  overflow: hidden;
 }
 
 .container-score {
@@ -25,7 +26,8 @@ body {
 .game-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px
+  gap: 5px;
+  width: 100%;
 }
 
 .grid-cell {
@@ -35,5 +37,64 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-style: 22px;
+  font-size: 22px;
 }
+
+.grid-cell[data-value] {
+  transition: background-color .2s;
+}
+
+.new-tile {
+  animation: spawntile .3s;
+}
+
+.container-game-over {
+  background-color: #f4f4f4;
+  border: 2px solid #959595;
+  border-radius: 10px;
+  width: 250px;
+  height: 150px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-restart-game {
+  margin-top: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #edc53f;
+}
+
+.btn-restart-game:hover {
+  background-color: #e1b00d;
+}
+
+@keyframes spawntile {
+  from {
+    opacity: 0;
+    transform: scale(.5);
+  } to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.grid-cell[data-value="2"] { background-color: #eee4da; }
+.grid-cell[data-value="4"] { background-color: #ede0c8; }
+.grid-cell[data-value="8"] { background-color: #f2b179; color: white; }
+.grid-cell[data-value="16"] { background-color: #f59563; color: white; }
+.grid-cell[data-value="32"] { background-color: #f67c5f; color: white; }
+.grid-cell[data-value="64"] { background-color: #f65e3b; color: white; }
+.grid-cell[data-value="128"] { background-color: #edcf72; color: white; }
+.grid-cell[data-value="256"] { background-color: #edcc61; color: white; }
+.grid-cell[data-value="512"] { background-color: #edc850; color: white; }
+.grid-cell[data-value="1024"] { background-color: #edc53f; color: white; }
+.grid-cell[data-value="2048"] { background-color: #e1b00d; color: white; }
