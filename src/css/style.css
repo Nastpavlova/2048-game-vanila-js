@@ -71,6 +71,7 @@ body {
   cursor: pointer;
   border-radius: 5px;
   background-color: #edc53f;
+  color: #f4f4f4;
 }
 
 .btn-restart-game:hover {
